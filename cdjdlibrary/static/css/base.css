@@ -1,0 +1,47 @@
+.main{
+    margin-top: 20px;
+}
+
+.left-column {
+    width: 16%;
+}
+
+.col {
+    margin-right: 1%;
+    float: left;
+}
+
+.gallery-list {
+    padding: 0;
+}
+
+.sidebar-box {
+    background: #fff;
+    margin: 0 0 20px 0;
+    padding: 4px;
+    -moz-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+body .pagewrapper{
+    background-image: url("/static/img/mainbaner.gif");
+    background-repeat:repeat;
+    padding-top: 0;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    height: 1000px;
+}
+
+.warning404 {
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+

@@ -1,0 +1,86 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}JR-CDRD Library{% endblock %}</title>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/js/base.js" type="text/javascript"></script>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block body %}
+      <header>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'home' %}">{% trans 'CDJD-Library' %}</a>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">{% trans 'Home' %}</a></li>
+              </ul>
+              {% if not hide_search %}
+                <form class="navbar-form navbar-left" role="search" action="/search">
+                  <div class="input-group" style="width:210px">
+                    <input type="text" class="form-control" name="q" placeholder="Search">
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                  </div>
+                </form>
+              {% endif %}
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="/{{  user.username }}">{{ user.profile.get_screen_name }}</a>
+                </li>
+                <li>
+                    <a href="/userleft?{{ user.username }}">
+                        5
+                    </a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/setting">{% trans 'Account Settings' %}</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/logout">{% trans 'Log out' %}</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+        <div class="pagewrapper">
+            <div class="container main">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="sidebar-box gallery-list">
+                            <div id="listcontent">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-10">
+                        {% block main %}{% endblock main %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock body %}
+  </body>
+</html>

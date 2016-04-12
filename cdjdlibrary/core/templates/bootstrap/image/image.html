@@ -1,0 +1,66 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}按钮{% endblock title %}
+{% block main %}
+
+<p>关闭图标
+<button type="button" class="close" aria-hidden="true">&times;</button>
+<span class="caret"></span>
+</p>
+<div class="pull-left">
+left float
+</div>
+<div class="pull-right">
+right float
+</div>
+<div class="row">
+    <div class="center-block" style="width:200px; background-color:#ccc;">
+        center-block实例
+    </div>
+</div>
+<div class="clearfix" style="background-color:#d8d8d8; border:1px solid #000; padding: 10px;">
+<div class="pull-left">
+left float
+</div>
+<div class="pull-right">
+right float
+</div>
+</div>
+
+<div class="row" style="padding:91px 100px 19px 50px;">
+    <div class="show" style="margin-left:10px; width:300px; background-color:#ccc;">
+        show case;
+    </div>
+<div class="hidden" style=" width:200px; background-color:#ccc;">
+        hidden case;
+    </div>
+</div>
+
+    <div class="row" style="padding:91px 100px 19px 50px;">
+        <form role="form" class="form-inline">
+            <div class="form-group">
+                <label class="sr-only sr-only-focusable" for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <label class="sr-only sr-only-focusable" for="pwd">Password</label>
+                <input type="password" id="pwd" class="form-control">
+            </div>
+        </form>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">一个链接</a></li>
+          <li><a href="#">另一个链接 link</a></li>
+          <li><a href="#">其他功能</a></li>
+        </ul>
+      </div>
+    <div class="btn-group">
+        <label data-toggle="dropdown">下拉<span class="caret"> </span></label>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">个人资料</a> </li>
+            <li><a href="#">邮件</a> </li>
+            <li><a href="#">退出</a> </li>
+        </ul>
+    </div>
+{% endblock main %}

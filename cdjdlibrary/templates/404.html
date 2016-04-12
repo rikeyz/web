@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block body %}
+    <div class="row text-center vertical-middle-sm">
+        <div class="col-sm-offset-3 col-sm-6 alert alert-danger">
+            {% trans 'Request error' %}
+            {% if message %}
+                <h4>{{ message }}</h4>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}

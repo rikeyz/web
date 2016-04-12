@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}导航{% endblock title %}
+{% block main %}
+<p>标签式的导航菜单</p>
+<ul class="nav nav-justified">
+    <li class="active"><a href="#">Home</a> </li>
+    <li><a href="#">SVN</a> </li>
+<li class="disabled"><a href="#">C++</a> </li>
+<li><a href="#">Java</a> </li>
+<li><a href="#">C</a> </li>
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Python<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Django</a> </li>
+        <li><a href="#">Scrapy</a> </li>
+        <li><a href="#">Numpy</a> </li>
+    </ul>
+</li>
+</ul>
+{% endblock main %}

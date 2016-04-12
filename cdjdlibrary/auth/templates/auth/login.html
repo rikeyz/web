@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles i18n %}
+
+{% block head %}
+  <title>{% trans 'Login' %}</title>
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+    <div class="nav navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">{% trans 'CDJD-Library' %}</a>
+        </div>
+    </div>
+    <div class="pagewrapper">
+       <div class="row mainbody">
+           <div class="vertical-center">
+               <h2 class="label-text">{% trans 'CDJD-Library Login' %}</h2>
+               <form class="form-horizontal" action={% url 'login' %} method="POST" role="form">
+                   {% csrf_token %}
+                   {% for field in form.visible_fields %}
+                       <div class="form-group">
+                           <label class="control-label col-sm-3 label-text {% if field.errors %} has-error{% endif %}" for="{{ field.label }}">{{ field.label }}</label>
+                           <div class="col-sm-9">
+                               {{ field }}
+                           </div>
+                       </div>
+                       <div class="help-block text-danger">
+                           {{ field.errors }}
+                       </div>
+                   {% endfor %}
+                   <div class="form-group">
+                       <div class="col-sm-offset-2 col-sm-5">
+                           <div class="checkbox">
+                               <label class="label-text">
+                                   <input type="checkbox" name="rememberme">{% trans 'auto login' %}
+                               </label>
+                           </div>
+                       </div>
+                       <div class="col-sm-offset-1 col-sm-4">
+                           <button type="submit" class="btn btn-primary" name="login" id="login">
+                               {% trans 'Login' %}
+                           </button>
+                       </div>
+                   </div>
+               </form>
+           </div>
+       </div>
+    </div>
+{% endblock body %}

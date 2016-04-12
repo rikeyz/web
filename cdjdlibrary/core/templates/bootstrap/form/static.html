@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}静态控件{% endblock title %}
+{% block main %}
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-8">
+                <p class="form-control-static">email@example.com</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-8" id="pwd">
+                <input class="form-control" type="password" id="inputPassword" placeholder="请输入密码">
+            </div>
+        </div>
+    </form>
+
+{% endblock main %}
+{% block jsblock %}
+
+    $(document).ready(function(){
+        $("#pwd").focus(function(){
+        $(this).addClass("has-error");
+    }).blur(function() {
+            $(this).addClass("has-error");
+        });
+    });
+
+{% endblock jsblock %}

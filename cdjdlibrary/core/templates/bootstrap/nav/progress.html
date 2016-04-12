@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}导航{% endblock title %}
+{% block main %}
+<div class="progress progress-striped">
+<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemax="100" aria-valuemin="0" >
+    <span id="ptxt">0% 完成</span>
+</div>
+
+</div>
+{% endblock main %}
+{% block jsblock %}
+    $(document).ready(function(){
+        var p = 0;
+        var interval;
+
+            interval = setInterval(chp, "50");
+
+        function chp() {
+            $(".progress-bar").css("width",p + "%");
+            $("#ptxt").text(p+"% 已完成");
+            p = p + 1;
+            if (p > 100) clearTimeout(interval);
+        }
+
+    });
+{% endblock jsblock %}

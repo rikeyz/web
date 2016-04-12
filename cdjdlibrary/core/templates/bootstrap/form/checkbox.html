@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}复选框{% endblock title %}
+{% block main %}
+    <label for="name">默认复选框实例</label>
+    <div class="checkbox">
+        <label><input type="checkbox" value="c1">选项1</label>
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox" value="c2">选项2</label>
+    </div>
+
+    <h3>raido</h3>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="op1" value="op1" checked>选项1
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="op2" value="op2">选项1
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="op3" value="op3">选项3
+        </label>
+    </div>
+    <div>
+        <label for="name">内联的复选和单选实例</label>
+        <div>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="icb1" value="op1">选项1
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="icb2" value="op2">选项2
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" id="icb3" value="op3">选项3
+            </label><div class="radio">
+                <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 选项 1
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadiosinline" id="optionsRadios4" value="option2"> 选项2
+            </label>
+        </div>
+    </div>
+    </div>
+{% endblock main %}
